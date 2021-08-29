@@ -27,4 +27,4 @@ test_data <- test_data %>% mutate(Survived = case_when(Sex == "female" ~ 1,
 #Prepare submission files
 submission_columns <- c("PassengerId", "Survived")
 submission_data <- test_data[submission_columns]
-write.csv(submission_data, file = "Output/FemaleSurv_Model.csv", row.names = FALSE)
+write.csv(submission_data, file = "Output/FemaleSurv_model/FemaleSurv_Model.csv", row.names = FALSE)
