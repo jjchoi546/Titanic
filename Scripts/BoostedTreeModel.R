@@ -9,7 +9,7 @@ load.packages(c('dplyr',
                 'caret'))
 
 #Print Submission?
-printSubmission <- TRUE
+printSubmission <- FALSE
 
 #Pull all the files for the project into an array
 getwd()
@@ -42,7 +42,7 @@ cv.sae_errors <- as.numeric(k)
 folds <- sample(1:5, nrow(train_data), replace = TRUE)
 
 
-#Fit to the random tree model
+#Fit to the bosted model with standard parameters
 set.seed(1)
 
 Boost.model <- gbm(formula = Survived ~ ., 
