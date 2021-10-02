@@ -1,7 +1,7 @@
 #Comparison of the misclassification rates between the models
-models <- c("Base", "Pruned Tree")
-mse <- c(cv.base_mse, cv.pTree_mse)
-sae <- c(cv.base_sae, cv.pTree_sae)
+models <- c("Female Surv", "Pruned Tree", "RForest", "Tuned RForest", "Boost")
+mse <- c(cv.base_mse, cv.pTree_mse, cv.rForest_mse, cv.rForestTuned_mse, cv.Boost_mse)
+sae <- c(cv.base_sae, cv.pTree_sae, cv.rForest_sae, cv.rForestTuned_sae, cv.Boost_sae)
 
 #Results location
 results_name_csv <- "Results_Comparison.csv"

@@ -31,9 +31,10 @@ folds <- sample(1:5, nrow(train_data), replace = TRUE)
 
 for (i in 1:k) {
   start_time <- Sys.time()
+  pred <- train_data[folds==i,] %>% mutate(Survived = case_when(Sex == "female" ~ 1, Sex == "male" ~ 0))
+  pred <- pred$Survived
   
-  pred <- 0
-  cv.mse_errors[i] <- mean((as.numeric(as.character(train_data$Survived[folds==i])) - pred) ^2)
+  cv.mse_errors[i] <- mean((as.numeric(as.character(train_data$Survived[folds==i])) - pred)^2)
   cv.sae_errors[i] <- sum(abs((as.numeric(as.character(train_data$Survived[folds==i])))))
   
   end_time <- Sys.time()

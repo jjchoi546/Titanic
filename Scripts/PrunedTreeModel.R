@@ -49,7 +49,7 @@ for (i in 1:k) {
   #text(tree.model, pretty = 0, cex = 0.7)
   
   #Check to see if pruning the tree would yield results
-  #cv.tree.model <- cv.tree(tree.model)
+  cv.tree.model <- cv.tree(tree.model)
   #plot(cv.tree_model$size, cv.treemodel$dev, type = 'b')
   min.idx <- which.min(cv.tree.model$dev)
   min.node <- cv.tree.model$size[min.idx]
